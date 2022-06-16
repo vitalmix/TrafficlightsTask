@@ -24,20 +24,10 @@ public class Run {
 
         if (res == 0 && minute > 0) {
             System.out.println("Color: " + trafficLights.get(2).getLight());
-            return;
+        } else if (res == 4) {
+            System.out.println("Color: " + trafficLights.get(1).getLight());
+        } else {
+            System.out.println("Color: " + trafficLights.get(0).getLight());
         }
-
-        int index = 0;
-
-        for (int i = 0; i < trafficLights.size(); i++) {
-            res -= trafficLights.get(i).getTime();
-
-            if (res <= 0) {
-                index = i;
-                break;
-            }
-        }
-
-        System.out.println("Color: " + trafficLights.get(index).getLight());
     }
 }
